@@ -1,0 +1,6 @@
+/vendor/
+/symfony/
+/twig/
+composer.json
+composer.lock
+composer.phar

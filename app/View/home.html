@@ -1,0 +1,33 @@
+<section>
+	<h1>Postagens: </h1>
+</section>
+
+<section>
+	{% for postagem in postagens %}
+	<article>
+		<header>
+			<h2><a href="http://localhost/crud/?pagina=post&id={{postagem.id}}">{{postagem.titulo}}</a></h2>
+		</header>
+		<p>{{postagem.conteudo}}</p>
+	</article>
+	{% endfor %}
+</section>
+<!-- 
+<section>
+	<article>
+		<header>
+			<h2><a href="#">Titulo da minha postagem</a></h2>
+		</header>
+		<p>Conteúdo dá minha postagem</p>
+	</article>
+</section>
+			
+<section>
+	<article>
+		<header>
+			<h2><a href="#">Titulo da minha postagem</a></h2>
+		</header>
+		<p>Conteúdo dá minha postagem</p>
+	</article> -->
+
+</section>
