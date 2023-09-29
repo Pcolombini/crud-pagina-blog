@@ -9,7 +9,10 @@ class AdiminController
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('adimin.html');
 
+            $objPostagens = Postagem::selecionaTodos();
+            
             $parametros = [];
+            $parametros ['postagens'] = $objPostagens;
 
             $conteudo = $template->render($parametros);
             echo $conteudo;
@@ -32,7 +35,28 @@ class AdiminController
 
     public function insert()
     {
-        var_dump($_POST);
+        try {
+            Postagem::insert($_POST);
+            echo '<script>
+                alert("Publicação inserida com sucesso!");
+            </script>';
+            // echo '<script>
+            // location.href"localhost/crud/?pagina=adimin&metodo=index"
+            // </script>';
+            // header('location
+            // : localhost/crud/?pagina=adimin&metodo=index');
+            
+        } catch (Exception $e) {
+            echo '<script>
+                alert(" '.$e->getMessage().'");
+            </script>';
+            // echo '<script>
+            //     location.href"localhost/crud/?pagina=adimin&metodo=create"
+            // </script>';
+            // header('location
+            // : localhost/crud/?pagina=adimin&metodo=create');
+        }
     }
     
 }
+

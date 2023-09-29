@@ -6,9 +6,9 @@
     <title>Gerenciador de conteúdo</title>
     <style>
         tr,td,th{
-            border: 2px inset black;
+            /* border: 2px inset black;
             border-collapse: collapse;
-            padding: 2px;
+            padding: 2px; */
         }
     </style>
 </head>
@@ -16,19 +16,21 @@
     <h1>Gerenciador de Conteúdo</h1>
     <a href="http://localhost/crud/?pagina=adimin&metodo=create">Criar Publicação</a><br><br>
     <hr><br>
-    <table>
+    <table border="1">
         <tr>
             <th>ID</th>
             <th>TÍTULO</th>
             <th>ALTERAÇÃO</th>
             <th>DELEÇÃO</th>
         </tr>
-        <tr>
-            <td>ID</td>
-            <td>TÍTULO</td>
+        {% for postagens in postagens %}
+        <tr>    
+            <td>{{postagens.id}}</td>
+            <td>{{postagens.titulo}}</td>
             <td>ALTERAÇÃO</td>
             <td>DELEÇÃO</td>
         </tr>
+        {% endfor  %}
     </table>
 </body>
 </html>
